@@ -23,13 +23,21 @@ public class endLvl : MonoBehaviour
         {
             if (gameObject.tag == "Ship")
             {
-                PlayerPrefs.SetInt("canPlay6", 1);
+                PlayerPrefs.SetInt("canPlay7", 1);
                 PlayerPrefs.Save();
                 loader.LoadScene("Cutscene");
             }
             else
             {
-                loader.LoadScene("endLevel");
+                int level = PlayerPrefs.GetInt("Level");
+                if (level >= 6)
+                {
+                    loader.LoadScene("endLevel Lava");
+                } else
+                {
+                    loader.LoadScene("endLevel");
+                }
+                
             }
             
             PlayerPrefs.SetFloat("Time", time);

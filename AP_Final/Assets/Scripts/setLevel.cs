@@ -12,7 +12,7 @@ public class setLevel : MonoBehaviour
         PlayerPrefs.SetInt("Combo", 0);
         PlayerPrefs.SetInt("Continued?", 1);
         PlayerPrefs.SetInt("ContinueLevel", 1);
-        for (int i = 1; i <= 6; i++  )
+        for (int i = 1; i <= 7; i++  )
         {
             PlayerPrefs.SetFloat("bestTime" + i.ToString(), 1000000);
             PlayerPrefs.SetInt("bestCombo" + i.ToString(), 0);
