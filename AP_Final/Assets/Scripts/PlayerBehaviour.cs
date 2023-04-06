@@ -245,7 +245,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void WallJump()
     {
-        if (wallJumpingCounter < 1 && Input.GetKeyDown(KeyCode.Space))
+        if (wallJumpingCounter < 2 && Input.GetKeyDown(KeyCode.Space))
         {
 
             if (isWallSliding)

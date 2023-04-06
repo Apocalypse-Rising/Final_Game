@@ -17,7 +17,7 @@ public class setLevel : MonoBehaviour
             PlayerPrefs.SetFloat("bestTime" + i.ToString(), 1000000);
             PlayerPrefs.SetInt("bestCombo" + i.ToString(), 0);
             PlayerPrefs.SetInt("bestKills" + i.ToString(), 0);
-            PlayerPrefs.SetInt("canPlay" + i.ToString(), 0);
+            PlayerPrefs.SetInt("canPlay" + i.ToString(), 1);
         }
     }
 }
