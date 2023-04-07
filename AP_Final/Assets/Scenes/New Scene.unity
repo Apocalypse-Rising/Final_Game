@@ -293,6 +293,7 @@ MonoBehaviour:
   combo: {fileID: 0}
   startTime: 0
   currentTime: 0
+  damaged: 0
 --- !u!95 &110350597
 Animator:
   serializedVersion: 3
@@ -345,6 +346,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   jumpingPower: 16
+  input: 0
   check: 0
   knockback: 8
   rb: {fileID: 110350601}

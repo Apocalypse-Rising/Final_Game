@@ -35,6 +35,8 @@ public class PlayerBehaviour : MonoBehaviour
     private bool knockLeft = false;
     public float knockback;
     private float knockBackTime;
+    private SpriteRenderer playerRenderer;
+
 
     Collider2D currentWall = null;
     Collider2D lastWall = null;
@@ -55,6 +57,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerRenderer = GetComponent<SpriteRenderer>();
         GameObject l = GameObject.FindGameObjectWithTag("Lava");
         lava = l.GetComponent<LavaRise>();
         rb = GetComponent<Rigidbody2D>();
@@ -173,7 +176,6 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Enemy")
@@ -186,7 +188,6 @@ public class PlayerBehaviour : MonoBehaviour
                 PlayerPrefs.Save();
                 Destroy(collision.collider.gameObject);
                 soundSource.PlayOneShot(soundSource.clip);
-
             }
             else if (isGrounded())
             {
@@ -195,19 +196,38 @@ public class PlayerBehaviour : MonoBehaviour
                     knockLeft = true;
                     comboGet.damaged = true;
                     health.Damage();
-                    
-                } else if (rb.position.x > collision.GetContact(0).point.x)
+
+                    // Start the Coroutine to flash the player red
+                    animator.SetBool("damage", true);
+                    StartCoroutine(ResetDamage());
+                }
+                else if (rb.position.x > collision.GetContact(0).point.x)
                 {
                     knockLeft = false;
                     comboGet.damaged = true;
                     health.Damage();
-                }
-                knockBackTime = 0.3f;
-            }
-        }
 
+                    // Start the Coroutine to flash the player red
+                    animator.SetBool("damage", true);
+                    StartCoroutine(ResetDamage());
+                }
+ 
+
+            }
+            
+            knockBackTime = 0.3f;
+        }
     }
 
+
+    IEnumerator ResetDamage()
+    {
+        // Wait for 1 second
+        yield return new WaitForSeconds(1f);
+
+        // Reset the "damage" parameter to false
+        animator.SetBool("damage", false);
+    }
     private bool IsWalled()
     {
         currentWall = Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
