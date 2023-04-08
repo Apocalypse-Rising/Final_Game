@@ -223,7 +223,7 @@ public class PlayerBehaviour : MonoBehaviour
     IEnumerator ResetDamage()
     {
         // Wait for 1 second
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         // Reset the "damage" parameter to false
         animator.SetBool("damage", false);
