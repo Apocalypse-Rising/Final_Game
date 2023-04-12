@@ -3977,7 +3977,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< Updated upstream
   - component: {fileID: 1418775297}
   - component: {fileID: 1418775300}
   - component: {fileID: 1418775299}
@@ -4512,12 +4511,6 @@ GameObject:
   - component: {fileID: 1438827656}
   - component: {fileID: 1438827655}
   - component: {fileID: 1438827654}
-=======
-  - component: {fileID: 1442989057}
-  - component: {fileID: 1442989060}
-  - component: {fileID: 1442989059}
-  - component: {fileID: 1442989058}
->>>>>>> Stashed changes
   m_Layer: 6
   m_Name: Log (16)
   m_TagString: Untagged

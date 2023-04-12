@@ -4260,8 +4260,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae3e8e54359234c21bc1d737af4001e5, type: 3}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &1418775296
 GameObject:
   m_ObjectHideFlags: 0
@@ -4669,7 +4667,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
->>>>>>> Stashed changes
 --- !u!1 &1430979872
 GameObject:
   m_ObjectHideFlags: 0
