@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RopeSlide : MonoBehaviour
 {
-    public float raiseForce = 3f;
+    public float raiseForce = 0.1f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
