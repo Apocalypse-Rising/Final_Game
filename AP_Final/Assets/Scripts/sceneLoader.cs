@@ -34,10 +34,12 @@ public class sceneLoader : MonoBehaviour
         else if (sceneName.Contains("Select"))
         {
             int len = sceneName.Length;
-            int level = Int32.Parse( sceneName.Substring(len - 1));
+            int x = len - 6;
+            int level = Int32.Parse( sceneName.Substring(len - x));
+            Debug.Log(level);
             PlayerPrefs.SetInt("Level", level);
             PlayerPrefs.Save();
-            SceneManager.LoadScene("Level " + sceneName.Substring(len - 1));
+            SceneManager.LoadScene("Level " +level);
         }
         else
         {
