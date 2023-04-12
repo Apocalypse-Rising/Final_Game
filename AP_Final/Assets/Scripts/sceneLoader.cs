@@ -13,7 +13,9 @@ public class sceneLoader : MonoBehaviour
             int continueLev = PlayerPrefs.GetInt("ContinueLevel");
             if (continueLev == lev)
             {
-                PlayerPrefs.SetInt("ContinueLevel", continueLev + 1);
+                continueLev = continueLev + 1;
+                PlayerPrefs.SetInt("ContinueLevel", continueLev);
+                PlayerPrefs.SetInt("canPlay" + continueLev.ToString(), 1);
             }
             lev += 1;
             PlayerPrefs.SetInt("Level", lev);
