@@ -21,14 +21,13 @@ public class GameManager : MonoBehaviour
     void Restart()
     {
         int level = PlayerPrefs.GetInt("Level");
-        Debug.Log(level);
-        if (level > 6 && level < 10)
+        if (level > 5 && level < 9)
         {
             SceneManager.LoadScene("gameOver Forest");
-        } else if (level <= 6)
+        } else if (level <= 5)
         {
             SceneManager.LoadScene("gameOver");
-        } else if (level >= 10)
+        } else if (level >= 9)
         {
             SceneManager.LoadScene("gameOver Lava");
         }
