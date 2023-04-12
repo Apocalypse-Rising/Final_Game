@@ -23,7 +23,7 @@ public class setLevel : MonoBehaviour
             PlayerPrefs.SetInt("bestKills" + i.ToString(), 0);
             if (i > 1)
             {
-                PlayerPrefs.SetInt("canPlay" + i.ToString(), 0);
+                PlayerPrefs.SetInt("canPlay" + i.ToString(), 1);
             }
             
         }
